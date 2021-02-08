@@ -1,0 +1,9 @@
+[build]
+  publish = ".storybook/dist"
+  command = "yarn build:storybook"
+
+[dev]
+  command = "yarn start"
+  port = 9001
+  targetPort = 6006
+  autoLaunch = true

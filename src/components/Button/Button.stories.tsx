@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 
 import { Button as ButtonComponent, ButtonProps } from './Button';
-import IconPlus from './IconPlus';
+import { IconPlus } from '../Icons';
 
 export default {
   title: 'Design System/UI/Button',

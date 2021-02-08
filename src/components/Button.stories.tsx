@@ -5,8 +5,7 @@ import { Button as ButtonComponent, ButtonProps } from './Button';
 import IconPlus from './IconPlus';
 
 export default {
-  id: 'UI/Buttons',
-  title: 'Button',
+  title: 'Design System/UI/Button',
   component: ButtonComponent,
   argTypes: {
     variant: {

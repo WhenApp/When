@@ -18,7 +18,7 @@ export const parameters = {
 };
 
 const StoryContainer = styled.div(() => [
-  tw`flex items-center justify-center h-full max-w-xl px-4 mx-auto`,
+  tw`flex flex-wrap items-center justify-center h-full max-w-xl px-4 mx-auto`,
 ]);
 
 export const decorators = [

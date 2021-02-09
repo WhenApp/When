@@ -1,13 +1,11 @@
 import * as React from 'react';
-import tw, { styled } from 'twin.macro';
 
-const IconPlus = (props: React.SVGProps<SVGSVGElement>) => (
+const IconPlus = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
-    {...props}
   >
     <path
       fillRule="evenodd"
@@ -17,17 +15,5 @@ const IconPlus = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-interface StyledIconProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-}
-
-const StyledIconPlus = styled(IconPlus)<StyledIconProps>(({ size = 'md' }) => [
-  size === 'xs' && tw`w-5 h-5`,
-  size === 'sm' && tw`w-6 h-6`,
-  size === 'md' && tw`w-7 h-7`,
-  size === 'lg' && tw`w-8 h-8`,
-  size === 'xl' && tw`w-10 h-10`,
-]);
-
-const MemoIconPlus = React.memo(StyledIconPlus);
+const MemoIconPlus = React.memo(IconPlus);
 export default MemoIconPlus;

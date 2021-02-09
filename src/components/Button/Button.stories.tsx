@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Meta } from '@storybook/react/types-6-0';
 
 import { Button as ButtonComponent, ButtonProps } from './Button';
-import { IconPlus } from '../Icons';
+import Icons, { StyledIconContainer } from '../Icons';
 
 export default {
   title: 'Design System/UI/Button',
@@ -49,6 +49,8 @@ export const Button = (props: ButtonProps) => <ButtonComponent {...props} />;
 
 export const IconButton = (props: ButtonProps) => (
   <ButtonComponent {...props} isCircular>
-    <IconPlus size={props.size} />
+    <StyledIconContainer size={props.size}>
+      <Icons.IconPlus />
+    </StyledIconContainer>
   </ButtonComponent>
 );

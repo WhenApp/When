@@ -3,7 +3,8 @@ import { useSpring, animated, to } from 'react-spring';
 import { useGesture } from 'react-with-gesture';
 import tw, { css, styled } from 'twin.macro';
 
-export const SwipeableContainer = styled(animated.div)<{}>(() => [
+// these 'any' types are gross, but I can't figure out how to type these and TS complains if I try to let it infer...
+export const SwipeableContainer: React.VFC<any> = styled(animated.div)(() => [
   tw`relative flex-grow h-24 px-4 rounded-md select-none`,
   css`
     transform-origin: 50% 50% 0px;
@@ -13,11 +14,13 @@ export const SwipeableContainer = styled(animated.div)<{}>(() => [
     text-align: center;
   `,
 ]);
-export const IconContainer = styled(animated.div)(() => [tw`w-16 h-16`]);
+export const IconContainer: React.VFC<any> = styled(animated.div)(() => [
+  tw`w-16 h-16`,
+]);
 export const DefaultIcon = styled.div(() => [
   tw`w-full h-full bg-white rounded-full`,
 ]);
-export const ForegroundContainer = styled(animated.div)(() => [
+export const ForegroundContainer: React.VFC<any> = styled(animated.div)(() => [
   tw`absolute items-center justify-center w-full h-full`,
   css`
     cursor: grab;

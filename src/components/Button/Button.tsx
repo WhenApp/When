@@ -7,7 +7,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'muted';
 }
 
-export const Button = styled.button<ButtonProps>(
+export const Button: React.FC<ButtonProps> = styled.button<ButtonProps>(
   ({
     isCircular = false,
     isRounded = false,

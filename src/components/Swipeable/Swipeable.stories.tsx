@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { action } from '@storybook/addon-actions';
 import { Meta } from '@storybook/react/types-6-0';
 import tw, { styled } from 'twin.macro';
 
@@ -48,8 +49,24 @@ const iconProps = {
   ),
 };
 
-export const SwipeableComponent: React.VFC<Props> = props => (
-  <Swipeable {...props} {...iconProps}>
+const swipeAction = action('swiped');
+
+const onSwipe = (reset: () => void, direction: string) => {
+  swipeAction(direction);
+  setTimeout(reset, 1500);
+};
+
+const actionsProps = {
+  onSwipeLeft: (reset: () => void) => {
+    onSwipe(reset, 'left');
+  },
+  onSwipeRight: (reset: () => void) => {
+    onSwipe(reset, 'right');
+  },
+};
+
+export const SwipeableComponent = (props: Props) => (
+  <Swipeable {...props} {...iconProps} {...actionsProps}>
     <ListItemWrapper>
       <ListItemCard>
         <DashedLinePlaceholder height="100%" />
@@ -60,17 +77,17 @@ export const SwipeableComponent: React.VFC<Props> = props => (
 
 export const SwipeableList: React.VFC<Props> = props => (
   <ListItemContainer>
-    <Swipeable {...props} {...iconProps}>
+    <Swipeable {...props} {...iconProps} {...actionsProps}>
       <ListItemCard>
         <DashedLinePlaceholder height="100%" />
       </ListItemCard>
     </Swipeable>
-    <Swipeable {...props} {...iconProps}>
+    <Swipeable {...props} {...iconProps} {...actionsProps}>
       <ListItemCard>
         <DashedLinePlaceholder height="100%" />
       </ListItemCard>
     </Swipeable>
-    <Swipeable {...props} {...iconProps}>
+    <Swipeable {...props} {...iconProps} {...actionsProps}>
       <ListItemCard>
         <DashedLinePlaceholder height="100%" />
       </ListItemCard>

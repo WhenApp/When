@@ -15,6 +15,11 @@ export const parameters = {
       { name: 'dark', value: '#374151' },
     ],
   },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+    },
+  },
 };
 
 const StoryContainer = styled.div(() => [

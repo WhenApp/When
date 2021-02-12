@@ -80,7 +80,7 @@ export const Swipeable: React.FC<Props> = ({
     const width = elemRef.current.offsetWidth;
 
     if (!down) {
-      const shouldSwipe = Math.abs(delta[0]) >= width / 2;
+      const shouldSwipe = Math.abs(delta[0]) >= width / 3;
 
       if (shouldSwipe) {
         const swipeDirection = delta[0] > 0 ? 'right' : 'left';

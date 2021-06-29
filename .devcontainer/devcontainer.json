@@ -1,9 +1,6 @@
 {
   "name": "WhenApp Monorepo",
   "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-14",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
   "extensions": [
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",

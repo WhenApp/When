@@ -9,6 +9,7 @@ interface Props {
 }
 
 export const useUpdatingTime = ({ time }: Props) => {
+  const [date] = React.useState(new Date(time));
   const [timeString, setTimeString] = React.useState<string>(
     formatDistanceToNowStrict(new Date(time), { addSuffix: true }),
   );
@@ -29,5 +30,5 @@ export const useUpdatingTime = ({ time }: Props) => {
     setDuration(newDuration);
   }, 250);
 
-  return { time: timeString, duration };
+  return { time: timeString, date, duration };
 };

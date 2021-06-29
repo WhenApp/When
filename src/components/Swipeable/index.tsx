@@ -11,7 +11,6 @@ export const SwipeableContainer: React.FC<any> = styled(animated.div)(() => [
     box-sizing: border-box;
     display: grid;
     align-items: center;
-    text-align: center;
   `,
 ]);
 export const IconContainer: React.FC<any> = styled(animated.div)(() => [
@@ -95,15 +94,7 @@ export const Swipeable: React.FC<Props> = ({
         }
       }
     }
-  }, [
-    down,
-    delta,
-    elemRef.current,
-    onSwipeRight,
-    onSwipeLeft,
-    setIsInteractable,
-    setXOverride,
-  ]);
+  }, [down, delta, elemRef.current, setIsInteractable, setXOverride]);
 
   const IconLeft = iconLeft ? iconLeft : DefaultIcon;
   const IconRight = iconRight ? iconRight : DefaultIcon;
@@ -115,12 +106,14 @@ export const Swipeable: React.FC<Props> = ({
       style={{
         background: bg,
         pointerEvents: isInteractable ? 'auto' : 'none',
+        maxHeight: 600,
       }}
     >
       <IconContainer
         style={{
           transform: avSize,
           justifySelf: delta[0] < 0 ? 'end' : 'start',
+          overflow: 'hidden',
         }}
       >
         <Icon />
